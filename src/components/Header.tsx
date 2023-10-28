@@ -13,7 +13,7 @@ const useStyles = makeStyles(() => {
       },
 
       "@media(max-width: 640px)": {
-        fontSize: "16px",
+        fontSize: "14px!important",
       },
     },
   };
@@ -74,6 +74,13 @@ export default function Header() {
         </a>
         <a href="#JoinUS">
           <Typography className={classes.link}>Join us</Typography>
+        </a>
+        <a
+          href="https://metaic.gitbook.io/metaic/metaic-privacy-policy"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <Typography className={classes.link}>Privacy Policy</Typography>
         </a>
       </Box>
     </Box>
