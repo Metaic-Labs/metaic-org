@@ -6,6 +6,7 @@ export interface ButtonProps {
   onClick?: () => void;
   onMouseEnter?: () => void;
   onMouseLeave?: () => void;
+  type?: "primary" | "secondary";
 }
 
 export default function Button({
@@ -13,6 +14,7 @@ export default function Button({
   onClick,
   onMouseEnter,
   onMouseLeave,
+  type = "primary",
 }: ButtonProps) {
   return (
     <Box
@@ -23,10 +25,13 @@ export default function Button({
         alignItems: "center",
         padding: "18px 44px",
         cursor: "pointer",
-        background: "#FC5DB5",
+        background: type === "primary" ? "#FC5DB5" : "#ffffff",
         transition: "all 300ms",
         borderRadius: "80px",
-
+        boxShadow:
+          type === "primary"
+            ? "none"
+            : "0px 4px 10px 0px rgba(184, 183, 252, 0.20)",
         "&:hover": {
           transform: "translate3d(0px, -3px, 0.01px)",
         },
@@ -35,7 +40,10 @@ export default function Button({
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >
-      <Typography color="#fff" sx={{ fontSize: "24px" }}>
+      <Typography
+        color={type === "primary" ? "#fff" : "#000"}
+        sx={{ fontSize: "24px" }}
+      >
         {children}
       </Typography>
     </Box>
