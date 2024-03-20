@@ -7,10 +7,7 @@ const agent = new HttpAgent({
   host: "https://ic0.app",
 });
 
-// ic pro : ahqrb-yqaaa-aaaap-ab4uq-cai
-// ic test : 25asb-xqaaa-aaaap-qb7nq-cai
-
 export const metaic = Actor.createActor<SERVICE>(InterfaceFactory, {
   agent: agent,
-  canisterId: "25asb-xqaaa-aaaap-qb7nq-cai",
+  canisterId: "ahqrb-yqaaa-aaaap-ab4uq-cai",
 });
